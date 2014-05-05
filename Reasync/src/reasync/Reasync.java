@@ -16,7 +16,11 @@ public class Reasync {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        String mp1="mp3";
+        String mp2="mp3";
+        if (mp1==mp2){
+            System.out.println("entre");
+        }
     }
     
 }

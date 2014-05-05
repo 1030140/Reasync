@@ -1,8 +1,8 @@
 import java.io.*;
 import java.util.*;
 public class OnlyMusic{
+    public static String ext="mp3";
 	public static void main(String[] args) {
-		String extension ="mp3";
 		String rute="/home/jdiazrdgz/Documentos/Blessed By A Burden/Addiction";
 		File dir = new File(rute);
 		String[] files = dir.list();
@@ -21,9 +21,12 @@ public class OnlyMusic{
 		for (int i=0;i<files.length;i++) {
 			String whats=getExtension(files[i]);
 			System.out.println(whats);
-			if (whats==extension) {
+			if (whats==ext) {
+                            System.out.println("is mp3");
 				onlyMusicFiles.add(files[i]);
-			}
+			}else{
+                            System.out.println("isnt mp3");
+                        }
 		}
 		Iterator<String> iteratorOnlyMusicFiles = onlyMusicFiles.iterator();
 		while(iteratorOnlyMusicFiles.hasNext()){
@@ -33,15 +36,16 @@ public class OnlyMusic{
 	}
 	public static String getExtension(String filename) {
         int index = filename.lastIndexOf('.');
-        String extension ="mp3";
-        String extensionObtenida=filename.substring(index + 1);
-        if ((String)extensionObtenida==extension){
-            System.out.println("entre");
-        }
+        String extensionObtenida =filename.substring(index + 1);
+        System.out.println("Soy obtenida"+extensionObtenida);
         if (index == -1) {
               return "";
         } else {
+            if (extensionObtenida==ext){
+                  System.out.println("entreaget");
+            }
               return filename.substring(index + 1);
+              
         }
 	}
 }
