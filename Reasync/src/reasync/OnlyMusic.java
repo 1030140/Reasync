@@ -21,7 +21,10 @@ public class OnlyMusic{
 		for (int i=0;i<files.length;i++) {
 			String whats=getExtension(files[i]);
 			System.out.println(whats);
-			if (whats==ext) {
+			
+			//if (whats==ext) {
+                        if (whats.equals(ext)) {
+                        	
                             System.out.println("is mp3");
 				onlyMusicFiles.add(files[i]);
 			}else{
